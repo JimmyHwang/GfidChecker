@@ -3,7 +3,7 @@ GFID Checker for fix damaged files of gluster volume
 
 ### Installation
 
-* [python3] - Please download the script from https://gist.github.com/louiszuckerman/4392640
+* [python3] - python3 is required for run the script.
 * [gfid-resolver.sh] - Please download the script from https://gist.github.com/louiszuckerman/4392640, put it in same folder with the script
 
 ### Usage
