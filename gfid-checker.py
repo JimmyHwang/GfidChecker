@@ -167,16 +167,19 @@ def PrintHelp():
   print('  gfid-checker.py --log --vols xxxx,yyyy')
   print('Show damaged files of volume xxxx,yyyy')
   print('  gfid-checker.py --s --vols xxxx,yyyy')
-  print('Delete bad files, but only show wihtou delete')
+  print('Delete bad files, but only show without delete')
   print('  gfid-checker.py --vols xxxx,yyyy --del_file')
   print('Delete bad files with confirm -y')
   print('  gfid-checker.py --vols xxxx,yyyy --del_file -y')
+  print('Delete bad files, but only show without delete')
+  print('  gfid-checker.py --vols xxxx,yyyy --del_gfid')
   print('Delete gfid files with confirm -y')
   print('  gfid-checker.py --vols xxxx,yyyy --del_gfid -y')
 
 def main(argv):
   global VerboseFlag
   global YesFlag
+  global ResolverFile
   
   log_flag = False
   show_flag = False
@@ -209,6 +212,10 @@ def main(argv):
   #
   # Command Process
   #
+  if os.path.exists(ResolverFile) == False:
+    print("Error: [%s] is requied, please download it from internet" % ResolverFile)
+    exit()
+    
   if len(VolumeList) == 0:
     print("Error: --vols is requied")
     exit()
